@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --purple:#a18dce;
+    --pink:#f492f0;
+    
+
+
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, var(--purple), var(--pink));
+    background-repeat: no-repeat;
+}
+
+.main{
+    width: 400px;
+    height: 550px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+.container:hover{
+    transform: translateY(-10px);
+}
+.container{
+    width: 400px;
+    height: 550px;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 1px 1px px rgba(0,0,0,0.09);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    transition: 0.3s linear;
+}
+.keys-layout{
+    display: flex;
+    width: 90%;
+    height: 70%;
+    /* border: 1px solid black; */
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0px;
+}
+.inp{
+    width: 87%;
+    height: 30%;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+    outline: none;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.09);
+    border: 1px solid rgba(255,255,255,0.5);
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0.2));
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.09);
+    border-radius: 0.8rem;
+    text-align: right;
+    padding: 20px;
+    /* backdrop-filter:blur(px); */
+    transition: 0.3s linear;
+
+}
+.keys1{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+.keys2{
+    /* margin-bottom: 15px; */
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+.last-row{
+    display: flex;
+    flex-direction: column;
+    /* margin: 0px 0px 0px 0px !important; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+.btn input,.btn-dlt,.last-row input{
+    width: 75px;
+    height: 60px;
+    cursor: pointer;
+    margin: 5px 8px;
+    transition: 0.3s linear;
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.09);
+    border: 0.5px solid rgba(255,255,255,0.3);
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.09);
+    border-radius: 12px;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+}
+/* .btn input{
+    transition: 0.3s linear;
+} */
+
+.C{
+    transition: 0.3s linear;
+}
+.C:hover{
+    /* color: #9881cc; */
+    /* background-color:#9881cc; */
+    background: linear-gradient(to top right, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+}
+.last-row input:hover{
+    background: linear-gradient(to top right, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+}
+.btn-dlt:hover{
+    background: linear-gradient(to top right, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+}
+.btn input:hover{
+    background: linear-gradient(to top right, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+}
+
+.btn-plus{
+    height: 130px !important;
+    /* margin-bottom: 0px; */
+}
+.btn{
+    display: flex;
+    /* border: 1px solid blue; */
+}
+.circle1,.circle2{
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    z-index: -2;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0.1));
+}
+.circle1{
+    top: -50px;
+    left: -60px;
+}
+.circle2{
+    bottom: -60px;
+    right: -50px;
+    transform: rotateZ(180deg);
+}
