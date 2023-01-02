@@ -27,48 +27,49 @@ Made with Glassmorphism Effect">
 <meta property="twitter:image" content="https://raw.githubusercontent.com/dragodiv/calculator-glassmorph/main/Calculator-Glassmorph.png">
     
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="https://twemoji.maxcdn.com/2/svg/1f496.svg" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="https://twemoji.maxcdn.com/2/svg/1f523.svg" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <title>Calculator ~ Glassmorph</title>
 </head>
 <body>
     <div class="main">
         <div class="container">
-            <input type="text" class="inp" disabled>
+            <input type="text" class="inp" id="display" value="0" disabled>
             <div class="keys-layout">
             <div class="keys1">
                 <div class="key-row1 btn">
-                    <input type="button" class="C" value="C">
+                    <input type="button" class="C button" value="C">
                     <input type="button" value="%">
                     <input type="button" value="/">
                 </div>
                 <div class="key-row2 btn">
-                    <input type="button" value="7">
-                    <input type="button" value="8">
-                    <input type="button" value="9">
+                    <input type="button" class="button" value="7">
+                    <input type="button" class="button" value="8">
+                    <input type="button" class="button" value="9">
                 </div>
                 <div class="key-row3 btn">
-                    <input type="button" value="4">
-                    <input type="button" value="5">
-                    <input type="button" value="6">
+                    <input type="button" class="button" value="4">
+                    <input type="button" class="button" value="5">
+                    <input type="button" class="button" value="6">
                 </div>
                 <div class="key-row4 btn">
-                    <input type="button" value="1">
-                    <input type="button" value="2">
-                    <input type="button" value="3">
+                    <input type="button" class="button" value="1">
+                    <input type="button" class="button" value="2">
+                    <input type="button" class="button" value="3">
                 </div>
                 <div class="key-row5 btn">
-                    <input type="button" value="0">
-                    <input type="button" value=".">
-                    <input type="button" value="=">
+                    <input type="button" class="button" value="0">
+                    <input type="button" class="button" value=".">
+                    <input type="button" class="button" value="=">
                 </div>
             </div>
             <div class="keys2">
                 <div class="last-row">
-                    <button class="btn-dlt"><i class="fa-regular fas fa-delete-left"></i></button>
-                    <input type="button" value="*">
-                    <input type="button" value="-">
-                    <input type="button" class="btn-plus" value="+">
+                    <!-- <button class="btn-dlt button" value="del"><i class="fa-regular fas del-btn button fa-delete-left"></i></button> -->
+                    <input class="btn-dlt button" type="button" value="➤">
+                    <input type="button" class="button" value="*">
+                    <input type="button" class="button" value="-">
+                    <input type="button" class="btn-plus button" value="+">
                 </div>
             </div>
             </div>
@@ -76,5 +77,37 @@ Made with Glassmorphism Effect">
         <div class="circle1"></div>
         <div class="circle2"></div>
     </div>
+
+    <!-- Script part -->
+<script>
+let btn = document.getElementsByClassName("button");
+let display = document.getElementById("display");
+var string = "";
+
+Array.from(btn).forEach((element) => {
+    element.addEventListener("click", (e) => {
+        let val = e.target.value;
+        if(val == "="){
+            string = eval(string);
+            display.value = string;
+        }else if(val == "C"){
+            string = "0";
+            display.value = string;
+        }else if(val == "➤"){
+                string = string.slice(0, string.length-1);
+                display.value = string;
+            }else if(string == "0"){
+                string = "" + val;
+                display.value = string;
+            }else{
+                string = string + val;
+                display.value = string;
+            
+        }
+    })
+})
+
+</script>
+
 </body>
 </html>
