@@ -7,6 +7,7 @@ Array.from(btn).forEach((element) => {
         let val = e.target.value;
         if(val == "="){
             string = eval(string);
+            string = string + "";
             display.value = string;
         }else if(val == "C"){
             string = "0";
